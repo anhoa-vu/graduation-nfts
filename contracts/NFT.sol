@@ -8,7 +8,7 @@ contract NFT is ERC721 {
     using Counters for Counters.Counter;
     Counters.Counter private currentTokenId;
     
-    constructor() ERC721("NFTTutorial", "NFT") {}
+    constructor() ERC721("UniAdelaideGrad", "ADL") {}
     
     function mintTo(address recipient)
         public
