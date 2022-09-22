@@ -3,7 +3,7 @@ const { getContractAt } = require("@nomiclabs/hardhat-ethers/internal/helpers");
 require('dotenv').config();
 
 
-CONTRACT_ADDRESS = '0x5D04aD77a84DfF4744dF14e512c10b9bA6D5D44B';
+CONTRACT_ADDRESS = '0x3118a3C46D4B754d7dC6d102e81981BAA30Aa3e8';
 
 // Helper method for fetching environment variables from .env
 function getEnvVariable(key, defaultValue) {
