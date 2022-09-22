@@ -7,6 +7,9 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 contract NFT is ERC721 {
     using Counters for Counters.Counter;
     Counters.Counter private currentTokenId;
+
+    ///Base token URI used as a prefix by tokenURI().
+    string public baseTokenURI;
     
     constructor() ERC721("UniAdelaideGrad", "ADL") {}
     
@@ -18,5 +21,9 @@ contract NFT is ERC721 {
         uint256 newItemId = currentTokenId.current();
         _safeMint(recipient, newItemId);
         return newItemId;
+    }
+    /// Returns an URI for a given token ID
+    function _baseURI() internal view virtual override returns (string memory) {
+        return baseTokenURI;
     }
 }
