@@ -11,3 +11,17 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat run scripts/deploy.js
 ```
+
+Deployment scripts:
+```shell
+npx hardhat compile
+npx hardhat deploy
+#Copy contract address to helpers.js
+npx hardhat set-base-token-uri --base-url "<url>/metadata/"
+
+npx hardhat mint --address <address>
+npx hardhat run scripts/deploy.js
+#fetch token metadata
+npx hardhat token-uri --token-id 1
+npx hardhat token-uri --token-id 2
+```
