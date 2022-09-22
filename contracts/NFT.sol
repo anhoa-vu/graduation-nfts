@@ -26,4 +26,9 @@ contract NFT is ERC721 {
     function _baseURI() internal view virtual override returns (string memory) {
         return baseTokenURI;
     }
+
+    /// Sets the base token URI prefix.
+    function setBaseTokenURI(string memory _baseTokenURI) public {
+        baseTokenURI = _baseTokenURI;
+    }
 }
