@@ -3,8 +3,9 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract NFT is ERC721 {
+contract NFT is ERC721, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private currentTokenId;
 
@@ -14,7 +15,7 @@ contract NFT is ERC721 {
     constructor() ERC721("UniAdelaideGrad", "ADL") {}
     
     function mintTo(address recipient)
-        public
+        public onlyOwner
         returns (uint256)
     {
         currentTokenId.increment();
@@ -28,7 +29,7 @@ contract NFT is ERC721 {
     }
 
     /// Sets the base token URI prefix.
-    function setBaseTokenURI(string memory _baseTokenURI) public {
+    function setBaseTokenURI(string memory _baseTokenURI) public onlyOwner {
         baseTokenURI = _baseTokenURI;
     }
 }
